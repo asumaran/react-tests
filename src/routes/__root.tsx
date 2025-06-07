@@ -11,6 +11,9 @@ export const Route = createRootRoute({
         <Link to="/counter" className="[&.active]:font-bold">
           Counter
         </Link>
+        <Link to="/controlledInput" className="[&.active]:font-bold">
+          Controlled Input
+        </Link>
       </div>
       <div className="p-10 bg-amber-200 h-screen">
         <div className="p-10 bg-white rounded-2xl">
