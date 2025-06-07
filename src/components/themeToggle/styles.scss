@@ -1,0 +1,16 @@
+.dark {
+  background-color: black;
+}
+
+input {
+  .dark & {
+    border: solid 1px #fff;
+    color: #fff;
+  }
+}
+
+label {
+  .dark & {
+    color: #fff;
+  }
+}
