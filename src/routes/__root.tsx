@@ -20,6 +20,9 @@ export const Route = createRootRoute({
         <Link to="/themeToggle" className="[&.active]:font-bold">
           Theme Toggle
         </Link>
+        <Link to="/fetch" className="[&.active]:font-bold">
+          Fetch
+        </Link>
       </div>
       <div className="p-10 bg-amber-200 h-screen">
         <div className="p-10 bg-white rounded-2xl">
