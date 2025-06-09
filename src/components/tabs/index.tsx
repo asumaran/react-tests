@@ -20,6 +20,7 @@ function Tabs({
   children,
   defaultActive = 0,
 }: {
+  // It's better if we specify the type of children we expect instead of using PropsWithChildren or React.FC
   children: ReactElement<ComponentProps<typeof TabPane>>[];
   defaultActive?: number;
 }) {
