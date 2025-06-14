@@ -65,7 +65,9 @@ function useFetch<T>(url: string): {
       } catch (e: unknown) {
         if (e instanceof Error) {
           if (e.name === 'AbortError') {
-            console.log('Fetch was aborted');
+            console.log(
+              'Fetch was aborted. Notice that in dev mode React might trigger this due to Strict mode.',
+            );
             return;
           }
           setState('error');
