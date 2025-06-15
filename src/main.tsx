@@ -8,10 +8,10 @@ import {
   createRouter,
 } from '@tanstack/react-router';
 import routesConfig from './routesConfig';
-import Home from './components/home';
+import Root from './components/root';
 
 const rootRoute = createRootRoute({
-  component: Home,
+  component: Root,
 });
 
 // Create dynamic routes from config
