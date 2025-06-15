@@ -1,11 +1,8 @@
-body {
-  font-family: sans-serif;
-}
-
 .accordion {
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
   overflow: hidden;
+  --accordion-transition: 0.3s ease;
 }
 
 .accordion-item {
@@ -69,15 +66,11 @@ body {
 }
 
 .accordion-content--expanded {
-  max-height: 500px; /* Adjust based on your content */
+  max-height: 200px; /* Component overrides this to handle increased height */
   opacity: 1;
 }
 
 .accordion-content-inner {
   padding: 1rem;
   background-color: #f8fafc;
-}
-
-.hidden {
-  display: none;
 }

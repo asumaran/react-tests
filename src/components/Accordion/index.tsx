@@ -17,6 +17,8 @@ import './style.css';
 import {
   useCallback,
   useId,
+  useLayoutEffect,
+  useRef,
   useState,
   type FC,
   type PropsWithChildren,
@@ -47,8 +49,33 @@ const Accordion = () => {
 const Collapsible: FC<PropsWithChildren<{ title: ReactNode }>> = (props) => {
   const contentId = useId();
   const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const handleButtonClick = useCallback(() => setIsExpanded((p) => !p), []);
+
+  // Height calculation function
+  const updateContentHeight = (element: HTMLDivElement, expanded: boolean) => {
+    if (expanded) {
+      try {
+        const height = element.scrollHeight || 0;
+        element.style.maxHeight = `${height}px`;
+      } catch (e) {
+        console.error('Fallback to CSS', e);
+      }
+    } else {
+      element.style.maxHeight = '0';
+    }
+  };
+
+  useLayoutEffect(() => {
+    const contentElement = contentRef.current;
+
+    if (!contentElement) {
+      return;
+    }
+
+    updateContentHeight(contentElement, isExpanded);
+  }, [isExpanded]);
 
   return (
     <div className='accordion-item'>
@@ -73,6 +100,7 @@ const Collapsible: FC<PropsWithChildren<{ title: ReactNode }>> = (props) => {
         role='tabpanel'
         className={`accordion-content ${isExpanded ? 'accordion-content--expanded' : 'accordion-content--collapsed'}`}
         aria-expanded={isExpanded}
+        ref={contentRef}
       >
         <div className='accordion-content-inner'>{props.children}</div>
       </div>
