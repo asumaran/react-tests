@@ -7,26 +7,25 @@ import { useState } from 'react';
 const list = ['goku', 'vegeta', 'krillin', 'picoro', 'gohan'];
 
 const FilteredList = () => {
-  const [filteredList, setFilteredList] = useState(list);
+  const [query, setQuery] = useState('');
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const query = e.currentTarget.value;
-    if (query.trim()) {
-      // NOTE: we should filter the original list
-      // if we filter using filteredList it won't always work because it's already filtered.
-      const filtered = list.filter((i) => i.includes(query));
-      setFilteredList(filtered);
-    } else {
-      setFilteredList(list);
-    }
-  }
+  // Simple filtering - no memoization needed for small lists
+  const filteredList = query.trim()
+    ? list.filter((item) => item.toLowerCase().includes(query.toLowerCase()))
+    : list;
 
   return (
     <div>
-      <input className="border" type="text" onChange={handleChange} />
+      <input
+        className="border p-2 mb-4"
+        type="text"
+        placeholder="Search characters..."
+        value={query}
+        onChange={(e) => setQuery(e.currentTarget.value)}
+      />
       <ol>
-        {filteredList.map((name, i) => (
-          <li key={i}>{name}</li>
+        {filteredList.map((name) => (
+          <li key={name}>{name}</li>
         ))}
       </ol>
     </div>
