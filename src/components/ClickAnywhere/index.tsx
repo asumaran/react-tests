@@ -40,8 +40,8 @@ function useClickAnyWhere(handler: () => void) {
       handlerRef.current();
     };
 
-    document.addEventListener('click', handleClick);
+    window.addEventListener('click', handleClick);
 
-    return () => document.removeEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
   }, []);
 }
