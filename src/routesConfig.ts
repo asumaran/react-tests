@@ -8,6 +8,7 @@ import Index from './components/index';
 import Accordion from './components/Accordion';
 import ProgressBar from './components/ProgressBar';
 import ClickAnywhere from './components/ClickAnywhere';
+import UseCounter2 from './components/UseCounter2';
 
 const routesConfig = [
   { path: '/', label: 'Home', component: Index },

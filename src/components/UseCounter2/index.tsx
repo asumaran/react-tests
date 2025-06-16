@@ -41,7 +41,7 @@ interface UseCounterReturn {
   setCount: Dispatch<SetStateAction<number>>;
 }
 
-export default function Component() {
+export default function UseCounter2() {
   const { count, increment, decrement, reset, setCount } = useCounter();
   console.log('setCount', setCount); // only to silence ESLint
   return (
