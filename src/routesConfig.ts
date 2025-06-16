@@ -20,6 +20,7 @@ const routesConfig = [
   { path: '/accordion', label: 'Accordion', component: Accordion },
   { path: '/progressbar', label: 'Progress Bar', component: ProgressBar },
   { path: '/clickAnywhere', label: 'Click Anywhere', component: ClickAnywhere },
+  { path: '/useCounter2', label: 'useCounter2', component: UseCounter2 },
 ] as const;
 // "as const" is used here to preserve exact string literals (e.g., "/counter") instead of widening to generic 'string' type.
 // This enables TypeScript to extract specific paths for type-safe routing and Link components.
