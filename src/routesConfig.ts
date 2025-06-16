@@ -9,6 +9,7 @@ import Accordion from './components/Accordion';
 import ProgressBar from './components/ProgressBar';
 import ClickAnywhere from './components/ClickAnywhere';
 import UseCounter2 from './components/UseCounter2';
+import UseCycle from './components/UseCycle';
 
 const routesConfig = [
   { path: '/', label: 'Home', component: Index },
@@ -22,6 +23,7 @@ const routesConfig = [
   { path: '/progressbar', label: 'Progress Bar', component: ProgressBar },
   { path: '/clickAnywhere', label: 'Click Anywhere', component: ClickAnywhere },
   { path: '/useCounter2', label: 'useCounter2', component: UseCounter2 },
+  { path: '/useCycle', label: 'useCycle', component: UseCycle },
 ] as const;
 // "as const" is used here to preserve exact string literals (e.g., "/counter") instead of widening to generic 'string' type.
 // This enables TypeScript to extract specific paths for type-safe routing and Link components.
