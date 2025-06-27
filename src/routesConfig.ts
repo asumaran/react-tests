@@ -11,6 +11,7 @@ import ClickAnywhere from './components/ClickAnywhere';
 import UseCounter2 from './components/UseCounter2';
 import UseCycle from './components/UseCycle';
 import MortgageCalculator from './components/MortgageCalculator';
+import SuspensePage from './components/Suspense';
 
 const routesConfig = [
   { path: '/', label: 'Home', component: Index },
@@ -30,6 +31,7 @@ const routesConfig = [
     label: 'Mortgage Calculator',
     component: MortgageCalculator,
   },
+  { path: '/suspense', label: 'Suspense', component: SuspensePage },
 ] as const;
 // "as const" is used here to preserve exact string literals (e.g., "/counter") instead of widening to generic 'string' type.
 // This enables TypeScript to extract specific paths for type-safe routing and Link components.
