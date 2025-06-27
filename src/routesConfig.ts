@@ -12,28 +12,30 @@ import UseCounter2 from './components/UseCounter2';
 import UseCycle from './components/UseCycle';
 import MortgageCalculator from './components/MortgageCalculator';
 import SuspensePage from './components/Suspense';
+import { createRoutesWithPaths } from './lib/createRoutesWithPaths';
 
 const routesConfig = [
+  { label: 'Counter', component: Counter },
+  { label: 'Controlled Input', component: ControlledInput },
+  { label: 'Filtered List', component: FilteredList },
+  { label: 'Theme Toggle', component: ThemeToggle },
+  { label: 'Fetch', component: Fetch },
+  { label: 'Tabs', component: Tabs },
+  { label: 'Accordion', component: Accordion },
+  { label: 'Progress Bar', component: ProgressBar },
+  { label: 'Click Anywhere', component: ClickAnywhere },
+  { label: 'useCounter2', component: UseCounter2 },
+  { label: 'useCycle', component: UseCycle },
+  { label: 'Mortgage Calculator', component: MortgageCalculator },
+  { label: 'Suspense', component: SuspensePage },
+];
+
+// Aplicar la transformación
+const routesWithPaths = createRoutesWithPaths(routesConfig);
+
+export default [
   { path: '/', label: 'Home', component: Index },
-  { path: '/counter', label: 'Counter', component: Counter },
-  { path: '/ci', label: 'Controlled Input', component: ControlledInput },
-  { path: '/filteredList', label: 'Filtered List', component: FilteredList },
-  { path: '/themeToggle', label: 'Theme Toggle', component: ThemeToggle },
-  { path: '/fetch', label: 'Fetch', component: Fetch },
-  { path: '/tabs', label: 'Tabs', component: Tabs },
-  { path: '/accordion', label: 'Accordion', component: Accordion },
-  { path: '/progressbar', label: 'Progress Bar', component: ProgressBar },
-  { path: '/clickAnywhere', label: 'Click Anywhere', component: ClickAnywhere },
-  { path: '/useCounter2', label: 'useCounter2', component: UseCounter2 },
-  { path: '/useCycle', label: 'useCycle', component: UseCycle },
-  {
-    path: '/mortgageCalculator',
-    label: 'Mortgage Calculator',
-    component: MortgageCalculator,
-  },
-  { path: '/suspense', label: 'Suspense', component: SuspensePage },
+  ...routesWithPaths,
 ] as const;
 // "as const" is used here to preserve exact string literals (e.g., "/counter") instead of widening to generic 'string' type.
 // This enables TypeScript to extract specific paths for type-safe routing and Link components.
-
-export default routesConfig;
