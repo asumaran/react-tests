@@ -78,20 +78,20 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex">
-        <div className="h-screen w-48 bg-amber-200 text-sm p-5">
-          <div className="mb-5">
+      <div className='flex'>
+        <div className='h-screen w-60 bg-amber-200 text-sm p-5'>
+          <div className='mb-5'>
             <input
               ref={searchInputRef}
-              type="search"
-              placeholder="Search… (⌘F)"
-              className="w-full bg-white text-sm px-4 py-2 border-amber-400 focus:border-amber-600 focus:shadow-md focus:outline-0 border rounded-full"
+              type='search'
+              placeholder='Search… (⌘F)'
+              className='w-full bg-white text-sm px-4 py-2 border-amber-400 focus:border-amber-600 focus:shadow-md focus:outline-0 border rounded-full'
               value={query}
               onChange={(e) => setQuery(e.currentTarget.value)}
               onKeyDown={handleSearchKeyDown}
             />
           </div>
-          <div className="space-y-1">
+          <div className='space-y-1'>
             {filteredRoutes.map((route, index) => (
               <div key={route.path}>
                 <Link
@@ -107,7 +107,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <div className="flex-1 p-10  h-screen">
+        <div className='flex-1 p-10  h-screen'>
           <Outlet />
         </div>
       </div>
