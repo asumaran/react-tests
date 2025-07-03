@@ -17,6 +17,7 @@ import UseArrayPage from './components/UseArrayPage';
 import { UseDebouncePage } from './components/UseDebouncePage';
 import { UseSetPage } from './components/UseSetPage';
 import UseTimeoutPage from './components/UseTimeoutPage';
+import UseWindowSizePage from './components/UseWindowSizePage';
 
 const routesConfig = [
   { label: 'Counter', component: Counter },
@@ -36,6 +37,7 @@ const routesConfig = [
   { label: 'useDebounce', component: UseDebouncePage },
   { label: 'useSet', component: UseSetPage },
   { label: 'useTimeout', component: UseTimeoutPage },
+  { label: 'useWindowSize', component: UseWindowSizePage },
 ];
 
 // Aplicar la transformación
