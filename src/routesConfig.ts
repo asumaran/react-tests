@@ -15,6 +15,7 @@ import SuspensePage from './components/Suspense';
 import { createRoutesWithPaths } from './lib/createRoutesWithPaths';
 import UseArrayPage from './components/UseArrayPage';
 import { UseDebouncePage } from './components/UseDebouncePage';
+import { UseSetPage } from './components/UseSetPage';
 
 const routesConfig = [
   { label: 'Counter', component: Counter },
@@ -32,6 +33,7 @@ const routesConfig = [
   { label: 'Suspense', component: SuspensePage },
   { label: 'useArray', component: UseArrayPage },
   { label: 'useDebounce', component: UseDebouncePage },
+  { label: 'useSet', component: UseSetPage },
 ];
 
 // Aplicar la transformación
