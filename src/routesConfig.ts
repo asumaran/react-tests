@@ -14,6 +14,7 @@ import MortgageCalculator from './components/MortgageCalculator';
 import SuspensePage from './components/Suspense';
 import { createRoutesWithPaths } from './lib/createRoutesWithPaths';
 import UseArrayPage from './components/UseArrayPage';
+import { UseDebouncePage } from './components/UseDebouncePage';
 
 const routesConfig = [
   { label: 'Counter', component: Counter },
@@ -30,6 +31,7 @@ const routesConfig = [
   { label: 'Mortgage Calculator', component: MortgageCalculator },
   { label: 'Suspense', component: SuspensePage },
   { label: 'useArray', component: UseArrayPage },
+  { label: 'useDebounce', component: UseDebouncePage },
 ];
 
 // Aplicar la transformación
