@@ -20,6 +20,7 @@ import UseTimeoutPage from './components/UseTimeoutPage';
 import UseWindowSizePage from './components/UseWindowSizePage';
 import UseDataTablePage from './components/UseDataTablePage';
 import TodoListPage from './components/TodoListPage';
+import UseBooleanPage from './components/UseBooleanPage';
 
 const routesConfig = [
   { label: 'Counter', component: Counter },
@@ -42,6 +43,7 @@ const routesConfig = [
   { label: 'useWindowSize', component: UseWindowSizePage },
   { label: 'dataTable', component: UseDataTablePage },
   { label: 'TodoList', component: TodoListPage },
+  { label: 'UseBoolean', component: UseBooleanPage },
 ];
 
 // Aplicar la transformación
