@@ -26,12 +26,7 @@
 //
 // increment, decrement, reset, and setCount must be the same function instance across re-renders.
 
-import {
-  useState,
-  useCallback,
-  type Dispatch,
-  type SetStateAction,
-} from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 
 interface UseCounterReturn {
   count: number;
@@ -58,17 +53,17 @@ function useCounter(initialValue: number = 0): UseCounterReturn {
   const safeInitial = Number.isFinite(initialValue) ? initialValue : 0;
   const [count, setCount] = useState(safeInitial);
 
-  const increment = useCallback(() => {
+  const increment = function () {
     setCount((p) => p + 1);
-  }, []);
+  };
 
-  const decrement = useCallback(() => {
+  const decrement = function () {
     setCount((p) => p - 1);
-  }, []);
+  };
 
-  const reset = useCallback(() => {
+  const reset = function () {
     setCount(safeInitial);
-  }, [safeInitial]);
+  };
 
   return { count, increment, decrement, reset, setCount };
 }
